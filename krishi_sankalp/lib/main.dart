@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:krishi_sankalp/api/auth.dart';
 import 'package:krishi_sankalp/pages/export.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(); 
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -19,7 +23,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.greenAccent),
         ),
-      home: const LoginPage(),
+      home: AuthService().currentUser == null ? const LoginPage() : const HomePage(),
     );
   }
 }

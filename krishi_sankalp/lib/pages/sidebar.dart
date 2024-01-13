@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:krishi_sankalp/pages/export.dart';
-import '../auth.dart';
+import '../api/auth.dart';
 
 class NavigationSidebar extends StatelessWidget {
   NavigationSidebar({

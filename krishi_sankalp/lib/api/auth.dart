@@ -25,6 +25,7 @@ class AuthService{
       email: email, 
       password: password,
     );
+    print('ok done');
   }
 
   Future<void> signOut() async{
