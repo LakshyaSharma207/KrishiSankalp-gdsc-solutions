@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:krishi_sankalp/api/auth.dart';
 import 'package:krishi_sankalp/pages/export.dart';
@@ -21,9 +22,30 @@ class MyApp extends StatelessWidget {
       title: 'krishi sankalp',
       theme: ThemeData(
           useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.greenAccent),
+          colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 21, 77, 50)),
         ),
-      home: AuthService().currentUser == null ? const LoginPage() : const HomePage(),
+      home: const AuthWrapper(),
+    );
+  }
+}
+
+class AuthWrapper extends StatelessWidget {
+  const AuthWrapper({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<User?>(
+      stream: AuthService().authStateChanges,
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const CircularProgressIndicator();
+        } else {
+          if (snapshot.hasData) {
+            return HomePage();
+          } else {
+            return const LoginPage();
+          }
+        }
+      },
     );
   }
 }
