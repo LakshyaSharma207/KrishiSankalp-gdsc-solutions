@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:krishi_sankalp/pages/export.dart';
+import 'package:camera/camera.dart';
 
 class DiseaseDetect extends StatelessWidget {
   const DiseaseDetect({super.key});
@@ -14,12 +15,10 @@ class DiseaseDetect extends StatelessWidget {
         shadowColor: Colors.black,
       ),
       drawer: NavigationSidebar(),
-      body: Center(
+      body: const Center(
         child: Column(
           children: [
-            const Text('Flutter is ', style: TextStyle(fontWeight: FontWeight.bold,),),
-            const SizedBox(height: 10,),
-            Image.asset('assets/2Gb.gif'),
+            Text("hello world"),
           ],
         ),
       ),

@@ -103,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(isSignUp ? 'Sign Up' : 'Log In'),
                 ),
                 const SizedBox(height: 16),
-                Text(errormessage == '' ? 'no error' : 'Error $errormessage'),
+                Text(errormessage == '' ? '' : 'Error $errormessage'),
                 const SizedBox(height: 16),
                 TextButton(
                   onPressed: () {

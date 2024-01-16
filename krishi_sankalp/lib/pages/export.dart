@@ -5,3 +5,6 @@ export 'sidebar/sidebar.dart';
 export 'home_page/crop_diseases/crop_disease.dart';
 export 'disease_detect/disease_detect.dart';
 export 'profile/update_profile/update_profile.dart';
+export 'home_page/scan/scan.dart';
+export 'disease_detect/detection_page/detection_page.dart';
+export 'disease_detect/detection_page/information.dart';

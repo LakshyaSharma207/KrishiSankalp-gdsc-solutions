@@ -20,7 +20,16 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: CropDisease(user: user),
+          child: Column(
+            children: [
+              Expanded(child: LimitedBox(
+                maxHeight: 500,
+                child: CropDisease(user: user),
+                )
+              ),
+              const Scan(),
+            ],
+          ),
         ),
       )
     );

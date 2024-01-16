@@ -21,9 +21,11 @@ class NavigationSidebar extends StatelessWidget {
             padding: EdgeInsets.all(20)
           ),
           buildListTile(context, Icons.home, 'Home', HomePage()),
-          buildListTile(context, Icons.person_2_rounded, 'Profile', Profile()),
+          buildListTile(context, Icons.person_2_rounded, 'Profile', const Profile()),
           buildListTile(context, Icons.photo_camera_rounded, 'Detect Disease', const DiseaseDetect()),
-          buildListTile(context, Icons.person_off, 'krushi', Profile()),
+          buildListTile(context, Icons.add_business_rounded, 'Marketplace', const Placeholder()),
+          buildListTile(context, Icons.settings, 'Settings', const Placeholder()),
+          buildListTile(context, Icons.help_outlined, 'Help', const Placeholder()),
           Expanded(child: Container()),
           Text(user?.email ?? 'User Email'),
           const SizedBox(height: 16),
