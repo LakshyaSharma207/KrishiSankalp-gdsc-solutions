@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:krishi_sankalp/pages/export.dart';
-import 'package:camera/camera.dart';
 
 class DiseaseDetect extends StatelessWidget {
   const DiseaseDetect({super.key});
+
+  void startCamera() async {
+    final picker = ImagePicker();
+    await picker.pickImage(source: ImageSource.camera);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +20,16 @@ class DiseaseDetect extends StatelessWidget {
         shadowColor: Colors.black,
       ),
       drawer: NavigationSidebar(),
-      body: const Center(
+      body: Center(
         child: Column(
           children: [
-            Text("hello world"),
+            const Image(image: AssetImage('assets/image-placeholder.png')),
+            const SizedBox(height: 280,),
+            FloatingActionButton(
+              backgroundColor: Colors.grey,
+              shape: const CircleBorder(eccentricity: 0, side: BorderSide(width: 7,)),
+              onPressed: startCamera,
+            ),
           ],
         ),
       ),

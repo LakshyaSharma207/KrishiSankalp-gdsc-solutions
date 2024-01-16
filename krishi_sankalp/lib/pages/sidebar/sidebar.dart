@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:krishi_sankalp/pages/export.dart';
+import 'package:krishi_sankalp/pages/marketplace/marketplace.dart';
 import '../../api/auth.dart';
 
-class NavigationSidebar extends StatelessWidget {
+class NavigationSidebar extends StatefulWidget {
   NavigationSidebar({ super.key, });
+
+  @override
+  State<NavigationSidebar> createState() => _NavigationSidebarState();
+}
+
+class _NavigationSidebarState extends State<NavigationSidebar> {
   final User? user = AuthService().currentUser;
 
   Future<void> signOut() async{
     await AuthService().signOut();
+    setState(() {});
   }
 
    @override
@@ -23,7 +31,7 @@ class NavigationSidebar extends StatelessWidget {
           buildListTile(context, Icons.home, 'Home', HomePage()),
           buildListTile(context, Icons.person_2_rounded, 'Profile', const Profile()),
           buildListTile(context, Icons.photo_camera_rounded, 'Detect Disease', const DiseaseDetect()),
-          buildListTile(context, Icons.add_business_rounded, 'Marketplace', const Placeholder()),
+          buildListTile(context, Icons.add_business_rounded, 'Bazaar', const Marketplace()),
           buildListTile(context, Icons.settings, 'Settings', const Placeholder()),
           buildListTile(context, Icons.help_outlined, 'Help', const Placeholder()),
           Expanded(child: Container()),
