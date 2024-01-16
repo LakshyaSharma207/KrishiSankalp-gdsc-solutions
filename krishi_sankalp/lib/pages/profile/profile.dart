@@ -20,10 +20,8 @@ class _ProfileState extends State<Profile> {
   Future<void> updateProfile(BuildContext context) async {
     final result = await Navigator.push(context, MaterialPageRoute(builder: (context) => UpdateProfileScreen(user: user)));
 
-    if(result != null) {
-      setState(() {
-        user = result['user'];
-      });
+    if(result['success']) {
+      setState(() {});
     }
   }
 

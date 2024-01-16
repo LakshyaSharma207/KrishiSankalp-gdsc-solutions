@@ -26,7 +26,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
     if(_emailController.text != '') {
       widget.user?.updateEmail(_emailController.text);
     }
-    Navigator.pop(context, {'user': widget.user});
+    Navigator.pop(context, {'success': true});
   }
 
   @override
