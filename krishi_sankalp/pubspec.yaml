@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_core: ^2.24.2
   firebase_auth: ^4.16.0
+  google_sign_in: ^6.2.1
   cloud_firestore: ^4.14.0
   image_picker: ^1.0.7
   tflite_flutter: ^0.10.4
@@ -69,6 +70,7 @@ flutter:
     - assets/2Gb.gif
     - assets/avatar.png
     - assets/homeBg.png
+    - assets/image-placeholder.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
