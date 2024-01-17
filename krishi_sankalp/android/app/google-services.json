@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "412607044488",
+    "project_id": "krishi-sankalp",
+    "storage_bucket": "krishi-sankalp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412607044488:android:30a6437f34ca6ecdb9383d",
+        "android_client_info": {
+          "package_name": "com.example.krishi_sankalp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412607044488-vjs7egkrp1p66v8qn2b9tpck6ji5vh5j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeil9p0WMpYLczAMkwU0S6-uQ7y-W4tec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "412607044488-vjs7egkrp1p66v8qn2b9tpck6ji5vh5j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
