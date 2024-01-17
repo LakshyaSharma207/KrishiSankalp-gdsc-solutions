@@ -12,14 +12,14 @@ class DiseaseInfo extends StatelessWidget {
         children: [
           SizedBox(height: 10),
           Text(
-            'Crop Name:',
+            'Crop Name / Disease',
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
           ),
           Text(
-            'Something', 
+            'Tomato / Tomato_Blight', 
             style: TextStyle(fontSize: 16),
           ),
           SizedBox(height: 20),
@@ -31,7 +31,7 @@ class DiseaseInfo extends StatelessWidget {
             ),
           ),
           Text(
-            '1. do this\n2. do that.', 
+            '1. Use fungicide and add mulch to soil\n2. Remove infected plant portions.', 
             style: TextStyle(fontSize: 16),
           ),
         ],
