@@ -12,8 +12,8 @@
 migrate_working_dir/
 
 # excluding firebase credentials
-# android/app/google-services.json
-# lib/firebase_options.dart
+android/app/google-services.json
+lib/firebase_options.dart
 
 # IntelliJ related
 *.iml
