@@ -19,7 +19,7 @@ class DiseaseDetect extends StatelessWidget {
         elevation: 10,
         shadowColor: Colors.black,
       ),
-      drawer: NavigationSidebar(),
+      drawer: const NavigationSidebar(),
       body: Center(
         child: Column(
           children: [

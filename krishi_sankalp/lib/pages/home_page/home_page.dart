@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
         elevation: 10,
         shadowColor: Colors.black,
       ),
-      drawer: NavigationSidebar(),
+      drawer: const NavigationSidebar(),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),

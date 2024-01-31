@@ -34,7 +34,7 @@ class _ProfileState extends State<Profile> {
         elevation: 10,
         shadowColor: Colors.black,
       ),
-      drawer: NavigationSidebar(),
+      drawer: const NavigationSidebar(),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),

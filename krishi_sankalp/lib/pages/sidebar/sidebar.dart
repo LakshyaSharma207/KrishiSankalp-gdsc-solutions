@@ -5,7 +5,7 @@ import 'package:krishi_sankalp/pages/marketplace/marketplace.dart';
 import '../../api/auth.dart';
 
 class NavigationSidebar extends StatefulWidget {
-  NavigationSidebar({ super.key, });
+  const NavigationSidebar({ super.key, });
 
   @override
   State<NavigationSidebar> createState() => _NavigationSidebarState();
