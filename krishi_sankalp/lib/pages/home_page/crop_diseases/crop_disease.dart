@@ -17,10 +17,10 @@ class CropDisease extends StatelessWidget {
               .snapshots(), 
       builder: (context, snapshot) {
         if (snapshot.hasError) {
-          return Text('Error: ${snapshot.error}');
+          return Center(child: Text('Error: ${snapshot.error}'));
         }
         else if(!snapshot.hasData || snapshot.data!.docs.isEmpty) {
-          return const Text('No data available.');
+          return const Center(child: Text('No data available.'));
         }
         else {
           DocumentSnapshot userDocument = snapshot.data!.docs.first;

@@ -1,8 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:krishi_sankalp/pages/disease_detect/detection_page/information.dart';
 import 'package:krishi_sankalp/classifier/classifier_model.dart';
+import 'package:krishi_sankalp/pages/export.dart';
 
 class DetectionPage extends StatefulWidget {
   const DetectionPage({super.key, required this.imagePath});
@@ -14,21 +13,21 @@ class DetectionPage extends StatefulWidget {
 
 class _DetectionPageState extends State<DetectionPage> {
   final classifier = ClassifierModel();
-  String _results = '';
+  String _results = 'no_results';
+
+  Future<void> _initializeResults() async {
+    try {
+      var results = await classifier.predict(widget.imagePath);
+      setState(() {
+        _results = results;
+      });
+    } catch (error) {
+      print('Error initializing results: $error');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    useEffect(() {
-      Future<void> initialise() async {
-        var results = await classifier.predict(widget.imagePath);
-        setState(() {
-          _results = results;
-        });
-      }
-      initialise();
-      return null;
-    }, []);
-
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -51,8 +50,16 @@ class _DetectionPageState extends State<DetectionPage> {
               height: 200,
             ),
             const SizedBox(height: 15,),
-            _results == '' ? const Text('') : Text('This image is "$_results"'),
-            DiseaseInfo(results: _results,),
+            FloatingActionButton(
+              onPressed: () {
+                _initializeResults();
+              },
+              child: const Text('Analyze Image'),
+            ),
+            // Text('This image is "$_results"'), // for debugging
+            _results == 'no_results' 
+              ? Expanded(child: Center(child: Text(_results))) 
+              : DiseaseInfo(results: _results,),
           ],
         ),
       )

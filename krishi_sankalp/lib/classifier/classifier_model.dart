@@ -12,7 +12,10 @@ class ClassifierModel {
   late List<String> _labels;
 
   ClassifierModel(){
-    loadModel();
+    loadModelAndLabels();
+  }
+  Future<void> loadModelAndLabels() async {
+    await loadModel();
     loadLabels();
   }
 

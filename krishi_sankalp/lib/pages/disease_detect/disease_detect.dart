@@ -5,9 +5,15 @@ import 'package:krishi_sankalp/pages/export.dart';
 class DiseaseDetect extends StatelessWidget {
   const DiseaseDetect({super.key});
 
-  void startCamera() async {
+  void startCamera(BuildContext context) async {
     final picker = ImagePicker();
-    await picker.pickImage(source: ImageSource.camera);
+    final pickedFile = await picker.pickImage(source: ImageSource.camera);
+
+    if(pickedFile != null) {
+      if (!context.mounted) return;
+      Navigator.push(context, MaterialPageRoute(
+        builder: (context) => DetectionPage(imagePath: pickedFile.path)));
+    }
   }
 
   @override
@@ -26,9 +32,8 @@ class DiseaseDetect extends StatelessWidget {
             const Image(image: AssetImage('assets/image-placeholder.png')),
             const SizedBox(height: 280,),
             FloatingActionButton(
-              backgroundColor: Colors.grey,
-              shape: const CircleBorder(eccentricity: 0, side: BorderSide(width: 7,)),
-              onPressed: startCamera,
+              onPressed: () => startCamera(context),
+              child: const Icon(Icons.camera),
             ),
           ],
         ),

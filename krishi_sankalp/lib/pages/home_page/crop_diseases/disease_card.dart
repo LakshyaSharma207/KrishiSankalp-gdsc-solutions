@@ -72,6 +72,6 @@ class DiseaseCard extends StatelessWidget {
           ],
         ),
       ),
-    ) : const Center(child: Text('Great Job Treating all Crops'));
+    ) : Container();
   }
 }
