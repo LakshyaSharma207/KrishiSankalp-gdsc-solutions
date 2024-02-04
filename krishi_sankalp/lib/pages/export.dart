@@ -8,3 +8,4 @@ export 'profile/update_profile/update_profile.dart';
 export 'home_page/scan/scan.dart';
 export 'disease_detect/detection_page/detection_page.dart';
 export 'disease_detect/detection_page/information.dart';
+export 'crop_prediction/crop_prediction.dart';

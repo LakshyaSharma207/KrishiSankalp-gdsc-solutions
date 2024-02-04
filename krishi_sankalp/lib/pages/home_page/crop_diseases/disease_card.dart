@@ -59,7 +59,7 @@ class DiseaseCard extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              data['treatment'] != null ? 'Use ${data['treatment']}' : 'Information not available',
+              data['treatment'] != null ? '${data['treatment']}' : 'Information not available',
               style: const TextStyle(
                 fontSize: 16,
               ),
