@@ -32,7 +32,7 @@ class _NavigationSidebarState extends State<NavigationSidebar> {
           buildListTile(context, Icons.person_2_rounded, 'Profile', const Profile()),
           buildListTile(context, Icons.photo_camera_rounded, 'Detect Disease', const DiseaseDetect()),
           buildListTile(context, Icons.person_off, 'Predict Yield', const CropPrediction()),
-          buildListTile(context, Icons.add_business_rounded, 'Bazaar', const Marketplace()),
+          buildListTile(context, Icons.add_business_rounded, 'Bazaar', Marketplace()),
           buildListTile(context, Icons.settings, 'Settings', const Placeholder()),
           buildListTile(context, Icons.help_outlined, 'Help', const Placeholder()),
           Expanded(child: Container()),
