@@ -12,6 +12,7 @@ Future<void> main() async {
   );
   runApp(const MyApp());
 }
+// error regarding com.google.android.gms.providerinstaller.dynamite does not affect app. Its related to google play services.
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

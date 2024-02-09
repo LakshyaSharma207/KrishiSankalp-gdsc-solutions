@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:krishi_sankalp/api/auth.dart';
+import 'package:krishi_sankalp/pages/export.dart';
 
 class Marketplace extends StatelessWidget {
   Marketplace({super.key});
@@ -9,6 +10,8 @@ class Marketplace extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final surfaceVariantColor = Theme.of(context).colorScheme.surfaceVariant;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Bazaar', style: TextStyle(color: Colors.white),),
@@ -16,14 +19,40 @@ class Marketplace extends StatelessWidget {
         elevation: 10,
         shadowColor: Colors.black,
       ),
+      drawer: const NavigationSidebar(),
       body: Column(
         children: [
-          const SizedBox(height: 10,),
+          const SizedBox(height: 5,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('Your Request: '),
+              Container(
+                width: 20,
+                height: 20,
+                decoration: BoxDecoration(
+                  color: Colors.greenAccent, 
+                  border: Border.all(color: Colors.black, width: 1,),
+                  borderRadius: const BorderRadius.all(Radius.circular(3)),
+                ),
+              ),
+              const SizedBox(width: 50,),
+              const Text('Others: '),
+              Container(
+                width: 20,
+                height: 20,
+                decoration: BoxDecoration(
+                  color: surfaceVariantColor, 
+                  border: Border.all(color: Colors.black, width: 1),
+                  borderRadius: const BorderRadius.all(Radius.circular(3)),
+                ),
+              ),
+            ],
+          ),
           Expanded(
             child: StreamBuilder<QuerySnapshot>(
               stream: FirebaseFirestore.instance
                   .collection('users')
-                  .where("userEmail", isNotEqualTo: user?.email)
                   .snapshots(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
@@ -39,6 +68,8 @@ class Marketplace extends StatelessWidget {
                     itemCount: snapshot.data!.docs.length,
                     itemBuilder: (context, index) {
                       final DocumentSnapshot bazaarDocument = snapshot.data!.docs[index];
+                      final isCurrentUser = bazaarDocument['userEmail'] == user?.email;
+
                       return StreamBuilder<QuerySnapshot>(
                         stream: bazaarDocument.reference.collection('posts').snapshots(),
                         builder: (context, postSnapshot) {
@@ -56,19 +87,31 @@ class Marketplace extends StatelessWidget {
                                 final docref = postSnapshot.data!.docs[index];
                                 final postData = docref.data() as Map<String, dynamic>;
 
-                                return InkWell(
-                                  onTap: () {
-                                    print("Card Tapped");
-                                  },
-                                  child: Card(
-                                    child: ListTile(
-                                      leading: const Icon(Icons.local_florist_outlined),
-                                      title: Text(postData['cropType']),
-                                      subtitle: Text(postData['message']),
-                                      trailing: Text('\$${index + 1}0'),
+                                if (postData['satisfied'] == false) {
+                                  return InkWell(
+                                    onTap: () => {},
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Card(
+                                        color: isCurrentUser ? Colors.greenAccent : null,
+                                        child: ListTile(
+                                          leading: const Icon(Icons.local_florist_outlined),
+                                          title: Text(postData['cropType']),
+                                          subtitle: Text(postData['description']),
+                                          trailing: Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              const Icon(Icons.delete, color: Colors.red),
+                                              const SizedBox(width: 10,),
+                                              Text('${postData['price']}\$'), 
+                                            ],
+                                          )
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                );
+                                  );
+                                }
+                                return null;
                               },
                             );
                           }
@@ -83,7 +126,9 @@ class Marketplace extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(16),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => NewRequest(user: user)));
+              },
               child: const Padding(
                 padding: EdgeInsets.all(16),
                 child: Text('Post a Request', style: TextStyle(fontSize: 16),),

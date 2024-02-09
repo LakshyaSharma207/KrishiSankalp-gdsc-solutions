@@ -20,16 +20,19 @@ class DiseaseInfo extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 10),
-          const Text(
-            'Crop Name / Disease',
-            style: TextStyle(
+          Text(
+            'Crop Name: $cropName',
+            style: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
           ),
           Text(
-            '$cropName / $disease',
-            style: const TextStyle(fontSize: 16),
+            'Disease: $disease',
+            style: const TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold
+            ),
           ),
           const SizedBox(height: 20),
           const Text(

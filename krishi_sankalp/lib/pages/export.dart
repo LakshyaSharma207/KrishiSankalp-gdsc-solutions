@@ -9,3 +9,5 @@ export 'home_page/scan/scan.dart';
 export 'disease_detect/detection_page/detection_page.dart';
 export 'disease_detect/detection_page/information.dart';
 export 'crop_prediction/crop_prediction.dart';
+export 'marketplace/marketplace.dart';
+export 'marketplace/request/new_request.dart';
