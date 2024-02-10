@@ -32,7 +32,7 @@ class CropDisease extends StatelessWidget {
                 return Text('Error: ${diseasesnapshot.error}');
               }
               else if(!diseasesnapshot.hasData || diseasesnapshot.data!.docs.isEmpty) {
-                return const Text('No data available.');
+                return const Center(child: Text('No data available.\nMaybe start analyzing crop diseases.'));
               }
               else{
                 return ListView.builder(

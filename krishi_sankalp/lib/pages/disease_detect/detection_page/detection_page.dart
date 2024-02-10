@@ -52,7 +52,7 @@ class _DetectionPageState extends State<DetectionPage> {
             const SizedBox(height: 15,),
             FloatingActionButton(
               onPressed: () {
-                _initializeResults();
+                _results == 'no_results' ? _initializeResults() : null;
               },
               child: const Text('Analyze Image'),
             ),

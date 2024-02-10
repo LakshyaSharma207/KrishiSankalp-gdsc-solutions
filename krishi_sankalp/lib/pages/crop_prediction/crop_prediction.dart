@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../export.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CropPrediction extends StatefulWidget {
   const CropPrediction({super.key});
@@ -56,7 +57,7 @@ class _CropPredictionState extends State<CropPrediction> {
             TextField(
               controller: rainController,
               decoration: const InputDecoration(
-                label: Text('Rainfall (cm2)'),
+                label: Text('Rainfall (mm)'),
                 labelStyle: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
               ),
             ),

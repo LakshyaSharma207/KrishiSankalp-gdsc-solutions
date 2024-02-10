@@ -45,6 +45,7 @@ dependencies:
   firebase_ml_model_downloader: ^0.2.4+8
   tflite_flutter: ^0.9.5
   tflite_flutter_helper: ^0.2.1
+  url_launcher: ^6.2.4
 
 dev_dependencies:
   flutter_test:
@@ -76,6 +77,9 @@ flutter:
     - assets/image-placeholder.png
     - assets/model.tflite
     - assets/labels.txt
+    - assets/location_data.json
+    - assets/market_data.json
+    - assets/season_data.json
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

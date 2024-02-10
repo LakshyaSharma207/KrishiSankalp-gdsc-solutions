@@ -22,9 +22,10 @@ class HomePage extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              Expanded(child: LimitedBox(
-                maxHeight: 500,
-                child: CropDisease(user: user),
+              Expanded(
+                child: LimitedBox(
+                  maxHeight: 500,
+                  child: CropDisease(user: user),
                 )
               ),
               const Scan(),

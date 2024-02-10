@@ -31,9 +31,14 @@ class DiseaseDetect extends StatelessWidget {
           children: [
             const Image(image: AssetImage('assets/image-placeholder.png')),
             const SizedBox(height: 280,),
-            FloatingActionButton(
-              onPressed: () => startCamera(context),
-              child: const Icon(Icons.camera),
+            Container(
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(30)),
+              child: IconButton(
+                onPressed: () => startCamera(context),
+                icon: const Icon(Icons.camera),
+                iconSize: 50,
+                alignment: Alignment.center,
+              ),
             ),
           ],
         ),

@@ -43,6 +43,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
         child: Form(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextFormField(
                 controller: _nameController,

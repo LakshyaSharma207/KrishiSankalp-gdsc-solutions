@@ -5,6 +5,7 @@ class AuthService{
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance; // for email sign in
 
   User? get currentUser => _firebaseAuth.currentUser;
+  Stream<User?> get currentUserStream => Stream<User?>.value(_firebaseAuth.currentUser);
 
   Stream<User?> get authStateChanges =>_firebaseAuth.authStateChanges();
 
