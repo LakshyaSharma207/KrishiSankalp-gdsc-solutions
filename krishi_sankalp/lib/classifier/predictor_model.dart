@@ -78,7 +78,7 @@ class CropPredictor {
       if (seasonEncoded == -1) {
         return 'Invalid season';
       }
-      /// Prepare input data
+      /// Prepare input data. Testing with double but int works fine too
       List<double> input = [locationEncoded.toDouble(), marketEncoded.toDouble(), seasonEncoded.toDouble()];
 
       // Prepare output data

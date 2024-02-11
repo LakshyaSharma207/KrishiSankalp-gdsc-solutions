@@ -35,6 +35,7 @@ class ClassifierModel {
       // _interpreter = interpreter ?? await Interpreter.fromFile(localModel.file);
       _interpreter = interpreter ?? await Interpreter.fromAsset('model.tflite');
       _interpreter.allocateTensors();
+      // get input and output shape
       print(_interpreter.getInputTensor(0).shape);
       print(_interpreter.getOutputTensor(0).shape);
     } catch(err){

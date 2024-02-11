@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../export.dart';
-import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart'; // external app
 
 class CropPrediction extends StatefulWidget {
   const CropPrediction({super.key});
@@ -17,7 +17,7 @@ class _CropPredictionState extends State<CropPrediction> {
   String _yieldResult = '';
 
   Future<void> predictYield() async{
-    var yieldResult = 'Not good';
+    var yieldResult = 'not good';
     setState(() {
       _yieldResult = yieldResult;
     });
