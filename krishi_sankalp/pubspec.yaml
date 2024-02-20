@@ -46,6 +46,7 @@ dependencies:
   tflite_flutter: ^0.9.5
   tflite_flutter_helper: ^0.2.1
   url_launcher: ^6.2.4
+  weather: ^3.1.1
 
 dev_dependencies:
   flutter_test:

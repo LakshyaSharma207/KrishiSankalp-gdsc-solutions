@@ -1,11 +1,32 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:krishi_sankalp/api/api.dart';
 import 'package:krishi_sankalp/api/auth.dart';
 import 'package:krishi_sankalp/pages/export.dart';
+import 'package:weather/weather.dart';
 
-class HomePage extends StatelessWidget {
-  HomePage({ super.key,});
+class HomePage extends StatefulWidget {
+  const HomePage({ super.key,});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   final User? user = AuthService().currentUser;
+
+  final WeatherFactory _wf = WeatherFactory(OPENWEATHER_API_KEY);
+
+  Weather? _weather;
+  @override
+  void initState() {
+    super.initState();
+    _wf.currentWeatherByCityName("Mumbai").then((value) => {
+      setState(() {
+        _weather = value;
+      })
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +44,9 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               Expanded(
-                child: LimitedBox(
-                  maxHeight: 500,
-                  child: CropDisease(user: user),
-                )
+                child: CropDisease(user: user),
               ),
+              WeatherCard(weather: _weather),
               const Scan(),
             ],
           ),
