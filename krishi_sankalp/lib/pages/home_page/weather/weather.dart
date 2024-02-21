@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:weather/weather.dart';
 
 class WeatherCard extends StatelessWidget {
-  const WeatherCard({Key? key, required this.weather}) : super(key: key);
+  const WeatherCard({super.key, required this.weather});
 
   final Weather? weather;
 

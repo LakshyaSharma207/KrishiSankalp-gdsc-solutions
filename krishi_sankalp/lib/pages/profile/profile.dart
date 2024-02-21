@@ -4,7 +4,7 @@ import 'package:krishi_sankalp/api/auth.dart';
 import 'package:krishi_sankalp/pages/export.dart';
 
 class Profile extends StatefulWidget {
-  Profile({super.key});
+  const Profile({super.key});
 
   @override
   State<Profile> createState() => _ProfileState();

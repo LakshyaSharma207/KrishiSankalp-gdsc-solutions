@@ -27,8 +27,8 @@ class _NavigationSidebarState extends State<NavigationSidebar> {
           const Padding(
             padding: EdgeInsets.all(20)
           ),
-          buildListTile(context, Icons.home, 'Home', HomePage()),
-          buildListTile(context, Icons.person_2_rounded, 'Profile', Profile()),
+          buildListTile(context, Icons.home, 'Home', const HomePage()),
+          buildListTile(context, Icons.person_2_rounded, 'Profile', const Profile()),
           buildListTile(context, Icons.photo_camera_rounded, 'Detect Disease', const DiseaseDetect()),
           buildListTile(context, Icons.add_business_rounded, 'Bazaar', Marketplace()),
           buildListTile(context, Icons.settings, 'Settings', const Placeholder()),

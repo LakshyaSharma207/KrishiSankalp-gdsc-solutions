@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class NewRequest extends StatefulWidget {
-  NewRequest({super.key, required this.user});
+  const NewRequest({super.key, required this.user});
   final User? user;
 
   @override
@@ -39,7 +39,7 @@ class _NewRequestState extends State<NewRequest> {
             .add({
               'cropType': _cropTypeController.text,
               'price': double.parse(_priceController.text),
-              'description': _descController.text ?? '',
+              'description': _descController.text,
               'satisfied': false,
             });
         }
