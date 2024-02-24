@@ -74,15 +74,11 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/2Gb.gif
     - assets/avatar.png
     - assets/homeBg.png
     - assets/image-placeholder.png
     - assets/model.tflite
     - assets/labels.txt
-    - assets/location_data.json
-    - assets/market_data.json
-    - assets/season_data.json
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
