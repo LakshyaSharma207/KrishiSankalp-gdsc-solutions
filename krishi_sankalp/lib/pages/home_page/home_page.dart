@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
@@ -16,7 +17,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final User? user = AuthService().currentUser;
   final WeatherFactory _wf = WeatherFactory(OPENWEATHER_API_KEY);
-  String? _currentAddress;
   Position? _currentPosition;
 
   Weather? _weather;
