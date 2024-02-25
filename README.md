@@ -1,5 +1,5 @@
 # Krishi Sankalp
-This Flutter app was my team named 'Adbhut', final project for GDSC 2023's Solutions Challenge. Its main feature is a tensorflow model which detects which disease a crop has based on its affected leaves. It has Firebase connectivity and uses Firestore Database for storing user and disease information.
+This Flutter app was my team named 'Adbhut', final project for GDSC 2024's Solutions Challenge. Its main feature is a tensorflow model which detects which disease a crop has based on its affected leaves. It has Firebase connectivity and uses Firestore Database for storing user and disease information.
 
 # Presentation
 
