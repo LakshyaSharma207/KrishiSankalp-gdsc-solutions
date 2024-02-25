@@ -18,9 +18,11 @@ Inside of the project directory run below command in terminal
 `flutter pub get`
 
 #### For testing the app using your own Firebase project
-First download [Firebase tools](https://firebase.google.com/docs/cli/#install_the_firebase_cli) in your cli and login.
+First go to [console.firebase.google.com](https://console.firebase.google.com/) and create a new project. Make sure its in testing mode. Now you would be needing Authentication and Firestore Database.
 
-Using [flutterfire](https://firebase.google.com/docs/flutter/setup?platform=android) generate your own configure file with your private apis and keys.
+After adding a new project download [Firebase tools](https://firebase.google.com/docs/cli/#install_the_firebase_cli) in your cli and login.
+
+Using [flutterfire](https://firebase.google.com/docs/flutter/setup?platform=android) generate your own configure file for the new project created in console.firebase with your private apis and keys.
 
 Then to run the project (in android emulator)
 
