@@ -63,13 +63,14 @@ class DiseaseInfo extends StatelessWidget {
                       return Text('Error: ${snapshot.error}');
                     }
                     if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+                      print(disease);
                       return const Text(
                           'No treatment information available.',
                           style: TextStyle(fontSize: 16),
                         );
                     }
                     List treatments = snapshot.data!.docs
-                        .map((doc) => '\n1. ' + doc['treatment1'] + '\n2. ' + doc['treatment2'])
+                        .map((doc) => "\n1. ${doc['treatment1']} \n2. ${doc['treatment2']}")
                         .toList();
 
                     return Column(

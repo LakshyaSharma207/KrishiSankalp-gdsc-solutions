@@ -77,8 +77,6 @@ class Marketplace extends StatelessWidget {
                             return const Center(child: CircularProgressIndicator());
                           } else if (postSnapshot.hasError) {
                             return Center(child: Text("Error: ${postSnapshot.error}"));
-                          } else if (!postSnapshot.hasData || postSnapshot.data!.docs.isEmpty) {
-                            return const Center(child: Text("No data available"));
                           } else {
                             return ListView.builder(
                               shrinkWrap: true,
@@ -101,9 +99,9 @@ class Marketplace extends StatelessWidget {
                                           trailing: Row(
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
-                                              const Icon(Icons.delete, color: Colors.red),
+                                              isCurrentUser ? const Icon(Icons.delete, color: Colors.red) : const Text(''),
                                               const SizedBox(width: 10,),
-                                              Text('${postData['price']}\$'), 
+                                              Text('₹${postData['price']} / kg'), 
                                             ],
                                           )
                                         ),
